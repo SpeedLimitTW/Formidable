@@ -49,10 +49,14 @@
                 </div>
                 <i class="handshake big icon"></i>
                 <i class="heartbeat big icon"></i>
-                <div class="ts dividing large header">
+                <br><br><br>
+                <div class="ts dividing large header" style="margin-top: 34px">
                     近期動態
                 </div>
-                <div class="ts feed">
+                <div class="ts active inline centered text loader" v-if="isLoading">
+                    讀取中
+                </div>
+                <div class="ts feed" v-if="!isLoading">
                     <div class="event">
                         <div class="label">
                             <img src="../assets/user.jpg">
@@ -140,21 +144,26 @@
 
 <script>
 import GlobalNavbar from './navbar.vue'
+import store from 'store2'
+import random from '../random.js'
 
 export default {
     data() {
         return {
             nickname: '',
+            isLoading: true,
         }
     },
-    mounted() {
+    async mounted() {
         this.nickname = store('nickname')
+        await random()
+        this.isLoading = false
 
         var ctx = document.getElementById('myChart').getContext('2d');
         var myRadarChart = new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['反應能力', '記憶能力', '洞察能力', '開發右腦', '總體啟發'],
+                labels: ['反應能力', '記憶能力', '洞察能力', '辨色能力', '總體能力值'],
                 datasets: [{
                     data: [100, 50, 40, 50, 20]
                 }]

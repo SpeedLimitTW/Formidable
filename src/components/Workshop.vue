@@ -49,77 +49,20 @@
             </div>
         </div>
         <div class="ts narrow container">
+            <div class="ts active inline centered text loader" v-if="isLoading">
+                讀取中
+            </div>
             <div class="ts four cards">
-                <div class="ts card">
+                <div class="ts card" v-for="item in items" :key="item.header">
                     <div class="image">
-                        <img src="../assets/bg.jpg">
-
+                        <img :src="item.image">
                     </div>
                     <div class="content">
                         <div class="header">
-                            三十公分
-                            <div class="sub header">由 測試人員 製作</div>
+                            {{ item.header }}
+                            <div class="sub header">{{ item.subHeader }}</div>
                         </div>
-                        <p>你將會在這裡看見一個魔法師的日常生活，</p>
-                        <p>沒錯，只要你能夠單身三十年，</p>
-                        <p>你也可以跟我一樣成為魔法師。</p>
-                        <button class="ts right floated right labeled icon button">
-                            開始
-                            <i class="chevron circle right icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="ts card">
-                    <div class="image">
-                        <img src="../assets/bg.jpg">
-
-                    </div>
-                    <div class="content">
-                        <div class="header">
-                            三十公分
-                            <div class="sub header">由 測試人員 製作</div>
-                        </div>
-                        <p>你將會在這裡看見一個魔法師的日常生活，</p>
-                        <p>沒錯，只要你能夠單身三十年，</p>
-                        <p>你也可以跟我一樣成為魔法師。</p>
-                        <button class="ts right floated right labeled icon button">
-                            開始
-                            <i class="chevron circle right icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="ts card">
-                    <div class="image">
-                        <img src="../assets/bg.jpg">
-
-                    </div>
-                    <div class="content">
-                        <div class="header">
-                            三十公分
-                            <div class="sub header">由 測試人員 製作</div>
-                        </div>
-                        <p>你將會在這裡看見一個魔法師的日常生活，</p>
-                        <p>沒錯，只要你能夠單身三十年，</p>
-                        <p>你也可以跟我一樣成為魔法師。</p>
-                        <button class="ts right floated right labeled icon button">
-                            開始
-                            <i class="chevron circle right icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="ts card">
-                    <div class="image">
-                        <img src="../assets/bg.jpg">
-
-                    </div>
-                    <div class="content">
-                        <div class="header">
-                            三十公分
-                            <div class="sub header">由 測試人員 製作</div>
-                        </div>
-                        <p>你將會在這裡看見一個魔法師的日常生活，</p>
-                        <p>沒錯，只要你能夠單身三十年，</p>
-                        <p>你也可以跟我一樣成為魔法師。</p>
+                        <div class="description" v-html="item.description"></div>
                         <button class="ts right floated right labeled icon button">
                             開始
                             <i class="chevron circle right icon"></i>
@@ -133,10 +76,46 @@
 
 <script>
 import GlobalNavbar from './navbar.vue'
+import random from '../random.js'
 
 export default {
     components: {
         GlobalNavbar
+    },
+    data() {
+        return {
+            isLoading: false,
+            items    : []
+        }
+    },
+    async mounted() {
+        this.isLoading = true
+        await random()
+        this.isLoading = false
+        this.items = [{
+            image: require('../assets/bg.jpg'),
+            header: '三十公分',
+            subHeader: '副標題',
+            description: '內容'
+        },
+        {
+            image: require('../assets/bg.jpg'),
+            header: '三十公分',
+            subHeader: '副標題',
+            description: '內容'
+        },
+        {
+            image: require('../assets/bg.jpg'),
+            header: '三十公分',
+            subHeader: '副標題',
+            description: '內容'
+        },
+        {
+            image: require('../assets/bg.jpg'),
+            header: '三十公分',
+            subHeader: '副標題',
+            description: '內容'
+        }]
     }
 }
 </script>
