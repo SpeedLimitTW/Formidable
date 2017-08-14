@@ -63,14 +63,11 @@
                         </div>
                         <div class="content">
                             <div class="summary">
-                                <a>Yami Odymel</a> 和你成為了朋友。
+                                <a>{{ nickname }}</a> 和你成為了朋友。
                                 <div class="date">
                                     1 小時前
                                 </div>
                             </div>
-                            <div class="meta">
-                                <a><i class="like icon"></i> 4 個讚</a>
-                            </div>
                         </div>
                     </div>
                     <div class="event">
@@ -79,38 +76,13 @@
                         </div>
                         <div class="content">
                             <div class="summary">
-                                <a>羽田白音</a> 在他牆上分享了這則貼文。
+                                <a>{{ nickname }}</a> 獲得成就。
                                 <div class="date">
                                     3 小時前
                                 </div>
                             </div>
-                            <div class="extra images">
-                                <a><img src="va.png"></a>
-                                <a><img src="va.png"></a>
-                            </div>
-                            <div class="meta">
-                                <a><i class="like icon"></i> 1 個讚</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="label">
-                            <img src="../assets/user.jpg">
-                        </div>
-                        <div class="content">
-                            <div class="summary">
-                                <a class="user">
-                                    Yami Odymel
-                                </a> 在他牆上分享了這則貼文
-                                <div class="date">
-                                    1 天前
-                                </div>
-                            </div>
                             <div class="extra description">
-                                準備向令一個平行世界的你道歉，因為你將在這個世界有所作為。
-                            </div>
-                            <div class="meta">
-                                <a><i class="like icon"></i> 成為第一個讚的人</a>
+                                <i class="handshake big icon"></i>
                             </div>
                         </div>
                     </div>

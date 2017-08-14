@@ -85,7 +85,7 @@
             <div class="ten wide column">
                 <div class="ts big dividing header">
                     工作坊
-                    <div class="sub header">遊玩由你、別人所創作的內容！</div>
+                    <div class="sub header">遊玩別人所創作的內容！</div>
                     <router-link to="workshop" class="ts basic secondary button" style="font-size: .5em; position: absolute; right: 0; bottom: 15px;">更多</router-link>
                 </div>
                 <div class="ts items">
