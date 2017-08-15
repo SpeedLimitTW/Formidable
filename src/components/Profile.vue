@@ -31,7 +31,7 @@
             <div style="position: absolute; left: 0; bottom: -60px;">
                 <img class="ts small image" src="../assets/user.jpg" style="border: 10px solid #FFF; border-radius: 10px;">
             </div>
-            <div style="    position: absolute; left: 170px; top: -40px; font-size: 1.7em; color: #FFF; text-shadow: 0 0 3px rgba(0,0,0,.8);">
+            <div style="position: absolute; left: 170px; top: -40px; font-size: 1.7em; color: #FFF; text-shadow: 0 0 3px rgba(0,0,0,.8);">
                 {{ nickname }}
             </div>
             <div style="position: absolute; left: 170px; top: 10px;">
@@ -63,20 +63,7 @@
                         </div>
                         <div class="content">
                             <div class="summary">
-                                <a>{{ nickname }}</a> 和你成為了朋友。
-                                <div class="date">
-                                    1 小時前
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="label">
-                            <img src="../assets/user.jpg">
-                        </div>
-                        <div class="content">
-                            <div class="summary">
-                                <a>{{ nickname }}</a> 獲得成就。
+                                <a>{{ nickname }}</a> 解鎖了成就。
                                 <div class="date">
                                     3 小時前
                                 </div>

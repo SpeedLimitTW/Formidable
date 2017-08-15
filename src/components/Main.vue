@@ -88,38 +88,24 @@
                     <div class="sub header">遊玩別人所創作的內容！</div>
                     <router-link to="workshop" class="ts basic secondary button" style="font-size: .5em; position: absolute; right: 0; bottom: 15px;">更多</router-link>
                 </div>
+                <div class="ts active inline centered text loader" v-if="isLoading" style="margin-top: 50px; margin-bottom: 50px;">
+                    讀取中
+                </div>
                 <div class="ts items">
-                    <div class="item">
+                    <div class="item" v-for="item in workshop" :key="item.header">
                         <div class="image">
-                            <img src="../assets/va.png">
+                            <img :src="item.image">
                         </div>
                         <div class="content">
-                            <a class="header">吻仔魚</a>
+                            <a class="header">{{ item.header }}</a>
                             <div class="meta">
-                                <span>$32 元</span>
+                                <span v-for="meta in item.meta" :key="meta.text">{{ meta.text }}</span>
                             </div>
                             <div class="description">
-                                一般可分為淡水魚魩仔魚與海水魚魩仔魚兩類。 根據臺灣大學王友慈博士指出，魩仔魚是單一種魚類， 是沙丁魚苗，若撈捕作業不正確有可能撈到數十至一百五十種類的魚苗。
+                                {{ item.description }}
                             </div>
                             <div class="extra">
-                                維基百科
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="../assets/va.png">
-                        </div>
-                        <div class="content">
-                            <a class="header">芒果</a>
-                            <div class="meta">
-                                <span>Mango</span>
-                            </div>
-                            <div class="description">
-                                是芒果屬的一種植物和果實，原產自北印度和馬來半島， 在梵語中叫作āmra，音譯為「菴羅」，或叫作āmalaka， 音譯為「菴摩勒」、「菴摩羅」、「阿摩落伽」。
-                            </div>
-                            <div class="extra">
-                                維基百科
+                                {{ item.extra }}
                             </div>
                         </div>
                     </div>
@@ -128,7 +114,25 @@
             <div class="six wide column">
                 <div class="ts big dividing header">
                     玩家動態
-                    <div class="sub header">收集</div>
+                    <div class="sub header">網站上的最新動態。</div>
+                </div>
+                <div class="ts feed" v-if="!isLoading">
+                    <div class="event">
+                        <div class="label">
+                            <img src="../assets/user.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="summary">
+                                <a>{{ nickname }}</a> 解鎖了成就。
+                                <div class="date">
+                                    3 小時前
+                                </div>
+                            </div>
+                            <div class="extra description">
+                                <i class="handshake big icon"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,10 +141,37 @@
 
 <script>
 import GlobalNavbar from './navbar.vue'
+import random from '../random.js'
+import store from 'store2'
 
 export default {
     components: {
         GlobalNavbar
+    },
+    data() {
+        return {
+            nickname: '',
+            isLoading: true,
+            workshop: []
+        }
+    },
+    async mounted() {
+        this.nickname = store('nickname')
+        await random()
+        this.isLoading = false
+        this.workshop = [
+            {
+                image: require('../assets/va.png'),
+                header: 'asdasdasd',
+                meta: [
+                    {
+                        text: 'asdasda'
+                    }
+                ],
+                description: 'sadasd',
+                extra: 'asdas',
+            }
+        ]
     }
 }
 </script>
