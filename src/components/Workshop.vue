@@ -63,10 +63,11 @@
                             <div class="sub header">{{ item.subHeader }}</div>
                         </div>
                         <div class="description" v-html="item.description"></div>
-                        <button class="ts right floated right labeled icon button">
+                        <br>
+                        <a href="https://scratch.mit.edu/projects/2689542/" class="ts right floated right labeled icon button">
                             開始
                             <i class="chevron circle right icon"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -93,28 +94,10 @@ export default {
         await random()
         this.isLoading = false
         this.items = [{
-            image: require('../assets/bg.jpg'),
-            header: '三十公分',
-            subHeader: '副標題',
-            description: '內容'
-        },
-        {
-            image: require('../assets/bg.jpg'),
-            header: '三十公分',
-            subHeader: '副標題',
-            description: '內容'
-        },
-        {
-            image: require('../assets/bg.jpg'),
-            header: '三十公分',
-            subHeader: '副標題',
-            description: '內容'
-        },
-        {
-            image: require('../assets/bg.jpg'),
-            header: '三十公分',
-            subHeader: '副標題',
-            description: '內容'
+            image: require('../assets/fight.png'),
+            header: '過關斬將',
+            subHeader: '1 人遊玩過',
+            description: '透過電腦玩家訓練反應神經，並在培養決策與思考能力。'
         }]
     }
 }

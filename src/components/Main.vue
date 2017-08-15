@@ -97,7 +97,7 @@
                             <img :src="item.image">
                         </div>
                         <div class="content">
-                            <a class="header">{{ item.header }}</a>
+                            <a href="https://scratch.mit.edu/projects/2689542/" class="header">{{ item.header }}</a>
                             <div class="meta">
                                 <span v-for="meta in item.meta" :key="meta.text">{{ meta.text }}</span>
                             </div>
@@ -136,6 +136,7 @@
                 </div>
             </div>
         </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 </template>
 
@@ -161,15 +162,15 @@ export default {
         this.isLoading = false
         this.workshop = [
             {
-                image: require('../assets/va.png'),
-                header: 'asdasdasd',
+                image: require('../assets/fight.png'),
+                header: '過關斬將',
                 meta: [
                     {
-                        text: 'asdasda'
+                        text: '1 人遊玩過'
                     }
                 ],
-                description: 'sadasd',
-                extra: 'asdas',
+                description: '透過電腦玩家訓練反應神經，並在培養決策與思考能力。',
+                extra: '由 Yami Odymel 發布',
             }
         ]
     }

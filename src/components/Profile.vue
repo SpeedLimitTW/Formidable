@@ -96,6 +96,7 @@
                 <div style="width: 340px; height: 340px; pointer-events: none; user-select: none;     margin: 0 auto;">
                     <canvas id="myChart"></canvas>
                 </div>
+                <br><br><br><br><br><br>
             </div>
         </div>
     </div>
